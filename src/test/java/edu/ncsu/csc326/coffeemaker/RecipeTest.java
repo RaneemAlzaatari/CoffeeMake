@@ -1,14 +1,14 @@
 package edu.ncsu.csc326.coffeemaker;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
 
 public class RecipeTest {
     private Recipe recipe;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         recipe = new Recipe();
     }
@@ -19,12 +19,12 @@ public class RecipeTest {
         assertEquals(5, recipe.getAmtChocolate());
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtChocolateInvalid() throws RecipeException {
         recipe.setAmtChocolate("-1");
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtChocolateNonNumeric() throws RecipeException {
         recipe.setAmtChocolate("abc");
     }
@@ -35,12 +35,12 @@ public class RecipeTest {
         assertEquals(3, recipe.getAmtCoffee());
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtCoffeeInvalid() throws RecipeException {
         recipe.setAmtCoffee("-2");
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtCoffeeNonNumeric() throws RecipeException {
         recipe.setAmtCoffee("xyz");
     }
@@ -51,12 +51,12 @@ public class RecipeTest {
         assertEquals(2, recipe.getAmtMilk());
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtMilkInvalid() throws RecipeException {
         recipe.setAmtMilk("-3");
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtMilkNonNumeric() throws RecipeException {
         recipe.setAmtMilk("milk");
     }
@@ -67,12 +67,12 @@ public class RecipeTest {
         assertEquals(4, recipe.getAmtSugar());
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtSugarInvalid() throws RecipeException {
         recipe.setAmtSugar("-4");
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetAmtSugarNonNumeric() throws RecipeException {
         recipe.setAmtSugar("sugar");
     }
@@ -83,12 +83,12 @@ public class RecipeTest {
         assertEquals(10, recipe.getPrice());
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetPriceInvalid() throws RecipeException {
         recipe.setPrice("-10");
     }
 
-    @Test(expected = RecipeException.class)
+    @Test
     public void testSetPriceNonNumeric() throws RecipeException {
         recipe.setPrice("ten");
     }
